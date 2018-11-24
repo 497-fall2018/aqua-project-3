@@ -7,7 +7,7 @@ import {
   View,
 } from 'react-native'
 
-class LoginScreen extends Component {
+class SearchScreen extends Component {
   constructor(props) {
     super(props)
     this.state = { count: 0 }
@@ -24,14 +24,14 @@ class LoginScreen extends Component {
          onPress={this.onPress}
          underlayColor={'white'}
         >
-         <Text>Login</Text>
+         <Text>Search</Text>
         </TouchableHighlight>
       </View>
     )
   }
 }
 
-export default LoginScreen;
+export default SearchScreen;
 
 const styles = StyleSheet.create({
   container: {
