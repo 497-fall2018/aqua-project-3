@@ -1,7 +1,6 @@
 import React, { Component } from 'react';
 import { Navigation } from 'react-native-navigation';
 import {
-  AppRegistry,
   StyleSheet,
   TouchableHighlight,
   Text,
@@ -17,7 +16,14 @@ class ExploreScreen extends Component {
   }
 
   onPressContinue = () => {
-    
+    Navigation.push(this.props.componentId, {
+        component: {
+            name: 'Wander.Confirm',
+            passProps: {
+              text: 'This is confirm screen'
+            }
+        }
+    })
   }
 
  render() {

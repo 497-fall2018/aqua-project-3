@@ -12,20 +12,15 @@ import LoginScreen from './src/screens/Login';
 import ExploreScreen from './src/screens/Explore';
 import SearchScreen from './src/screens/Search';
 import ProfileScreen from './src/screens/Profile';
+import ConfirmScreen from './src/screens/Confirm';
 
-Navigation.registerComponent('Wander.Login', () => LoginScreen)
-Navigation.registerComponent('Wander.Explore', () => ExploreScreen)
-Navigation.registerComponent('Wander.Search', () => SearchScreen)
-Navigation.registerComponent('Wander.Profile', () => ProfileScreen)
+Navigation.registerComponent('Wander.Login', () => LoginScreen);
+Navigation.registerComponent('Wander.Explore', () => ExploreScreen);
+Navigation.registerComponent('Wander.Search', () => SearchScreen);
+Navigation.registerComponent('Wander.Profile', () => ProfileScreen);
+Navigation.registerComponent('Wander.Confirm', ()=> ConfirmScreen);
 
 Navigation.events().registerAppLaunchedListener(()=> {
-    // Navigation.setRoot({
-    //     root:{
-    //         component:{
-    //             name:'Wander.Login'
-    //         }
-    //     }
-    // })
     Navigation.setRoot({
         root: {
           bottomTabs: {
@@ -41,10 +36,16 @@ Navigation.events().registerAppLaunchedListener(()=> {
                       }
                     }],
                     options: {
-                      bottomTab: {
-                        text: 'Explore',
-                        testID: 'FIRST_TAB_BAR_BUTTON'
-                      }
+                        bottomTab: {
+                            text: 'Explore',
+                            testID: 'FIRST_TAB_BAR_BUTTON'
+                        },
+                        // topBar: {
+                        //     title: {
+                        //         text: 'Explore',
+                        //         color: 'black'
+                        //     }
+                        // },
                     }
                 },
             },
