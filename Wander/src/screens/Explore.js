@@ -36,12 +36,12 @@ class ExploreScreen extends Component {
             <View>
                 <Image 
                     source={require('../assets/screens/Explore/Explore1.jpeg')} 
-                    style={{width: 460, height: 210}}/>
+                    style={{width: 470, height: 210}}/>
                 <Text style={styles.continueText}>Continue where you left off >></Text>
             </View>
         </TouchableHighlight>
         <View style={styles.activities}>
-            <View style={styles.activityPanel}>
+            <View style={styles.activityPanel1}>
                 <Text style={styles.activityPanelText}>Biking</Text>
             </View>
             <View style={styles.activityPanel}>
@@ -54,9 +54,15 @@ class ExploreScreen extends Component {
                 <Text style={styles.activityPanelText}>Bungee</Text>
             </View>
         </View>
-        <ScrollView styles={styles.dealsContainer}>
+        <ScrollView styles={deals.container}>
             <View>
-                <Text style={styles.dealsContainerTitle}>Adventure Packages: </Text>
+                <Text style={deals.title}>Biking Adventures: </Text>
+            </View>
+            <View style={deals.itemContainer}> 
+                <Image 
+                    style={deals.itemImage}
+                    source={require('../assets/screens/Explore/Explore2.jpg')}/>
+                <Text style={deals.itemLabel}>China</Text>
             </View>
         </ScrollView>
       </View>
@@ -65,6 +71,36 @@ class ExploreScreen extends Component {
 }
 
 export default ExploreScreen;
+
+const deals = StyleSheet.create({
+    container: {
+        flex: 1,
+        marginTop: 30,
+    },
+    title: {
+        padding: 10,
+        paddingTop: 15,
+        fontWeight: 'bold'
+    },
+    itemContainer: {
+        flex: 1,
+        justifyContent: 'center',
+        alignItems: 'center',
+    },
+    itemImage: {
+        width: 320,
+        height: 50,
+        opacity: .2,
+        borderRadius: 5,
+    },
+    itemLabel: {
+        position: 'absolute',
+        top: 20,
+        left: 160,
+        color: 'black',
+        fontWeight: 'bold',
+    }
+})
 
 const styles = StyleSheet.create({
   container: {
@@ -84,10 +120,21 @@ const styles = StyleSheet.create({
     fontWeight: '100',
   },
   activities: {
-    flex: .4,
+    flex: .5,
     backgroundColor: 'black',
-    flexDirection: 'row'
-},
+    flexDirection: 'row',
+    marginTop: 40,
+  },
+  activityPanel1: {
+    width: 90,
+    height: 90,
+    borderRadius: 10,
+    marginTop: 35,
+    marginLeft: 10,
+    justifyContent: 'center',
+    alignItems: 'center',
+    backgroundColor: 'whitesmoke'
+  },
   activityPanel: {
     backgroundColor: 'white',
     width: 90,
@@ -101,11 +148,4 @@ const styles = StyleSheet.create({
   activityPanelText:{
     fontWeight: 'bold',  
   },
-  dealsContainer:{
-    flex: 1,
-  },
-  dealsContainerTitle: {
-    padding: 10,
-    fontWeight: 'bold'
-  }
 })

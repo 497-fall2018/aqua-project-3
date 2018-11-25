@@ -10,7 +10,7 @@ import {
 
 class ConfirmScreen extends Component{
 
-    onBook= () => {
+    onBook = () => {
         alert("Congratulations! You're going to New Zealand! See your inbox for a confirmation and have a great journey.")
     }
     
