@@ -33,7 +33,7 @@ class ExploreScreen extends Component {
          style={styles.continue}
          onPress={this.onPressContinue}
          underlayColor={'white'}>
-            <View>
+            <View style={styles.continueImage}>
                 <Image 
                     source={require('../assets/screens/Explore/Explore1.jpeg')} 
                     style={{width: 470, height: 210}}/>
@@ -111,6 +111,8 @@ const styles = StyleSheet.create({
   continue: {
     flex: .7,
   },
+  continueImage: {
+  },
   continueText: {
     position: 'absolute',
     top: 180,
@@ -121,7 +123,7 @@ const styles = StyleSheet.create({
   },
   activities: {
     flex: .5,
-    backgroundColor: 'black',
+    backgroundColor: 'white',
     flexDirection: 'row',
     marginTop: 40,
   },
@@ -133,7 +135,7 @@ const styles = StyleSheet.create({
     marginLeft: 10,
     justifyContent: 'center',
     alignItems: 'center',
-    backgroundColor: 'whitesmoke'
+    backgroundColor: 'whitesmoke',
   },
   activityPanel: {
     backgroundColor: 'white',
@@ -143,7 +145,11 @@ const styles = StyleSheet.create({
     marginTop: 12,
     marginLeft: 10,
     justifyContent: 'center',
-    alignItems: 'center'
+    alignItems: 'center',
+    shadowOffset: { width: 10, height: 10 },
+    shadowRadius: 2,
+    borderColor: 'whitesmoke',
+    borderWidth: 2,
   },
   activityPanelText:{
     fontWeight: 'bold',  
