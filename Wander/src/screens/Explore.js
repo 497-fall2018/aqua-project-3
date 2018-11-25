@@ -28,7 +28,7 @@ class ExploreScreen extends Component {
 
  render() {
     return (
-      <View style={styles.container}>   
+      <View style={styles.container}>
         <TouchableHighlight
          style={styles.continue}
          onPress={this.onPressContinue}

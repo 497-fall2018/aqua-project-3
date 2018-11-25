@@ -1,11 +1,12 @@
-import React, { Component } from 'react'
+import React, { Component } from 'react';
+import { Navigation } from 'react-native-navigation';
 import {
   AppRegistry,
   StyleSheet,
   TouchableHighlight,
   Text,
   View,
-} from 'react-native'
+} from 'react-native';
 
 class LoginScreen extends Component {
   constructor(props) {
@@ -14,6 +15,65 @@ class LoginScreen extends Component {
   }
 
   onPress = () => {
+    Navigation.setRoot({
+      root: {
+        bottomTabs: {
+          children: [
+          {
+              stack: {
+                  children: [{
+                    component: {
+                      name: 'Wander.Explore',
+                      passProps: {
+                        text: 'This is tab 1'
+                      }
+                    }
+                  }],
+                  options: {
+                      bottomTab: {
+                          text: 'Explore',
+                          testID: 'FIRST_TAB_BAR_BUTTON'
+                      },
+                      // topBar: {
+                      //     title: {
+                      //         text: 'Explore',
+                      //         color: 'black'
+                      //     }
+                      // },
+                  }
+              },
+          },
+          {
+              component: {
+                  name: 'Wander.Search',
+                  passProps: {
+                    text: 'This is tab 2'
+                  },
+                  options: {
+                    bottomTab: {
+                      text: 'Search',
+                      testID: 'SECOND_TAB_BAR_BUTTON'
+                    }
+                  }
+                }
+          },
+          {
+              component: {
+                  name: 'Wander.Profile',
+                  passProps: {
+                    text: 'This is tab 3'
+                  },
+                  options: {
+                    bottomTab: {
+                      text: 'Profile',
+                      testID: 'THIRD_TAB_BAR_BUTTON'
+                    }
+                  }
+                }
+          }]
+        }
+      }
+    });
   }
 
  render() {
