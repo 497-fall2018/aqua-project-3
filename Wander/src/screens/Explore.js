@@ -1,12 +1,12 @@
 import React, { Component } from 'react';
 import { Navigation } from 'react-native-navigation';
 import {
-  StyleSheet,
-  TouchableHighlight,
-  Text,
-  View,
-  ScrollView,
-  Image,
+    StyleSheet,
+    TouchableHighlight,
+    Text,
+    View,
+    ScrollView,
+    Image,
 } from 'react-native';
 
 class ExploreScreen extends Component {
@@ -20,7 +20,7 @@ class ExploreScreen extends Component {
         component: {
             name: 'Wander.Confirm',
             passProps: {
-              text: 'This is confirm screen'
+              activityTitle: 'Guided Backpacking Trek'
             }
         }
     })
