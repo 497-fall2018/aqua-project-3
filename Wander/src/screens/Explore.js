@@ -7,6 +7,7 @@ import {
   Text,
   View,
   ScrollView,
+  Image,
 } from 'react-native';
 
 class ExploreScreen extends Component {
@@ -16,25 +17,40 @@ class ExploreScreen extends Component {
   }
 
   onPressContinue = () => {
-    console.log(this.props.text)
-    this.props.onContinue;
+    
   }
 
  render() {
     return (
-      <View style={styles.container}>
+      <View style={styles.container}>   
         <TouchableHighlight
          style={styles.continue}
          onPress={this.onPressContinue}
          underlayColor={'white'}>
-            <Text>Explore</Text>
+            <View>
+                <Image 
+                    source={require('../assets/screens/Explore/Explore1.jpeg')} 
+                    style={{width: 460, height: 210}}/>
+                <Text style={styles.continueText}>Continue where you left off >></Text>
+            </View>
         </TouchableHighlight>
         <View style={styles.activities}>
-            <Text>Activities</Text>
+            <View style={styles.activityPanel}>
+                <Text style={styles.activityPanelText}>Biking</Text>
+            </View>
+            <View style={styles.activityPanel}>
+                <Text style={styles.activityPanelText}>Hiking</Text>
+            </View>
+            <View style={styles.activityPanel}>
+                <Text style={styles.activityPanelText}>Skating</Text>
+            </View>
+            <View style={styles.activityPanel}>
+                <Text style={styles.activityPanelText}>Bungee</Text>
+            </View>
         </View>
         <ScrollView styles={styles.dealsContainer}>
             <View>
-                <Text>deal 1</Text>
+                <Text style={styles.dealsContainerTitle}>Adventure Packages: </Text>
             </View>
         </ScrollView>
       </View>
@@ -49,15 +65,41 @@ const styles = StyleSheet.create({
     flex: 1,
     justifyContent: 'center',
     backgroundColor:'whitesmoke',
-    paddingTop: 40,
   },
   continue: {
-    flex: .6,
+    flex: .7,
+  },
+  continueText: {
+    position: 'absolute',
+    top: 180,
+    left: 170,
+    color: 'white',
+    fontStyle: 'italic',
+    fontWeight: '100',
   },
   activities: {
-    flex: .4
+    flex: .4,
+    backgroundColor: 'black',
+    flexDirection: 'row'
+},
+  activityPanel: {
+    backgroundColor: 'white',
+    width: 90,
+    height: 90,
+    borderRadius: 10,
+    marginTop: 12,
+    marginLeft: 10,
+    justifyContent: 'center',
+    alignItems: 'center'
+  },
+  activityPanelText:{
+    fontWeight: 'bold',  
   },
   dealsContainer:{
     flex: 1,
+  },
+  dealsContainerTitle: {
+    padding: 10,
+    fontWeight: 'bold'
   }
 })

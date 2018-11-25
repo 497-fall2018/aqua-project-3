@@ -18,26 +18,6 @@ Navigation.registerComponent('Wander.Explore', () => ExploreScreen)
 Navigation.registerComponent('Wander.Search', () => SearchScreen)
 Navigation.registerComponent('Wander.Profile', () => ProfileScreen)
 
-onContinue = () => {
-    console.log('hello world')
-    Navigation.push(this.props.componentId, {
-        component: {
-          name: 'Wander.Search',
-          passProps: {
-            text: 'Pushed screen'
-          },
-          options: {
-            topBar: {
-              title: {
-                text: 'Deal 1'
-              }
-            }
-          }
-        }
-      });
-    
-}
-
 Navigation.events().registerAppLaunchedListener(()=> {
     // Navigation.setRoot({
     //     root:{
@@ -51,18 +31,22 @@ Navigation.events().registerAppLaunchedListener(()=> {
           bottomTabs: {
             children: [
             {
-                component: {
-                    name: 'Wander.Explore',
-                    passProps: {
-                      text: 'This is tab 2',
-                    },
+                stack: {
+                    children: [{
+                      component: {
+                        name: 'Wander.Explore',
+                        passProps: {
+                          text: 'This is tab 1'
+                        }
+                      }
+                    }],
                     options: {
                       bottomTab: {
                         text: 'Explore',
                         testID: 'FIRST_TAB_BAR_BUTTON'
                       }
                     }
-                  }
+                },
             },
             {
                 component: {
