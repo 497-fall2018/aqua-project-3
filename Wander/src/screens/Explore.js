@@ -9,6 +9,8 @@ import {
     Image,
 } from 'react-native';
 
+import DealItem from '../components/DealItem'
+
 class ExploreScreen extends Component {
   constructor(props) {
     super(props)
@@ -41,7 +43,7 @@ class ExploreScreen extends Component {
             </View>
         </TouchableHighlight>
         <View style={styles.activities}>
-            <View style={styles.activityPanel1}>
+            <View style={[styles.activityPanel, {borderColor: 'green'}]}>
                 <Text style={styles.activityPanelText}>Biking</Text>
             </View>
             <View style={styles.activityPanel}>
@@ -58,12 +60,13 @@ class ExploreScreen extends Component {
             <View>
                 <Text style={deals.title}>Biking Adventures: </Text>
             </View>
-            <View style={deals.itemContainer}> 
+            {/* <View style={deals.itemContainer}> 
                 <Image 
                     style={deals.itemImage}
                     source={require('../assets/screens/Explore/Explore2.jpg')}/>
                 <Text style={deals.itemLabel}>China</Text>
-            </View>
+            </View> */}
+            <DealItem />
         </ScrollView>
       </View>
     )
@@ -74,8 +77,6 @@ export default ExploreScreen;
 
 const deals = StyleSheet.create({
     container: {
-        flex: 1,
-        marginTop: 30,
     },
     title: {
         padding: 10,
@@ -86,6 +87,7 @@ const deals = StyleSheet.create({
         flex: 1,
         justifyContent: 'center',
         alignItems: 'center',
+        
     },
     itemImage: {
         width: 320,
@@ -104,14 +106,14 @@ const deals = StyleSheet.create({
 
 const styles = StyleSheet.create({
   container: {
-    flex: 1,
+    position: 'absolute',
     justifyContent: 'center',
-    backgroundColor:'whitesmoke',
   },
   continue: {
     flex: .7,
   },
   continueImage: {
+      overflow: 'hidden',
   },
   continueText: {
     position: 'absolute',
@@ -125,17 +127,8 @@ const styles = StyleSheet.create({
     flex: .5,
     backgroundColor: 'white',
     flexDirection: 'row',
-    marginTop: 40,
-  },
-  activityPanel1: {
-    width: 90,
-    height: 90,
-    borderRadius: 10,
-    marginTop: 35,
-    marginLeft: 10,
-    justifyContent: 'center',
-    alignItems: 'center',
-    backgroundColor: 'whitesmoke',
+    paddingBottom: 15,
+    
   },
   activityPanel: {
     backgroundColor: 'white',
@@ -146,8 +139,6 @@ const styles = StyleSheet.create({
     marginLeft: 10,
     justifyContent: 'center',
     alignItems: 'center',
-    shadowOffset: { width: 10, height: 10 },
-    shadowRadius: 2,
     borderColor: 'whitesmoke',
     borderWidth: 2,
   },
