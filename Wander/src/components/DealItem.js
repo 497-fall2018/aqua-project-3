@@ -27,7 +27,7 @@ class DealItem extends Component{
                     </View>
                     <View style={styles.infoContainer}>
                         <View style={styles.infoTextContainer}>
-                            <Text style={styles.infoText}></Text>
+                            <Text style={styles.infoText}>Backpacking in New Zealand</Text>
                         </View>
                         <View style={styles.timeAndPeopleContainer}>
                             
@@ -44,30 +44,46 @@ class DealItem extends Component{
 
 const styles = StyleSheet.create({
     container:{
-        width: '100%'
+        width: '100%',
+        marginTop: 10
     },
     itemContainer:{
         borderColor: 'whitesmoke',
         borderWidth: 1,
         height: 130,
         marginLeft: 10,
-        marginRight: 105,
+        marginRight: 15,
         borderRadius: 10
     },
     imageContainer: {
         overflow: 'hidden',
         borderTopLeftRadius: 10,
         borderBottomLeftRadius: 10,
-        width: 180
+        width: 160,
+        height: 130,
     },
     image: {
-        height: 130,
+        height: 180,
         width: 350,
-        marginLeft: -60,
+        marginLeft: -80,
     },
-    infoContainer:{},
-    infoTextContainer: {},
-    infoText: {},
+    infoContainer:{
+        backgroundColor: 'black',
+        position: 'absolute',
+        left: 160,
+        width: 195,
+        overflow: 'hidden',
+        borderBottomRightRadius: 10,
+        borderTopRightRadius: 10,
+        height: 130,
+    },
+    infoTextContainer: {
+    
+    },
+    infoText: {
+        color: 'black',
+
+    },
     timeAndPeopleContainer: {},
     priceTagContainer: {},
     

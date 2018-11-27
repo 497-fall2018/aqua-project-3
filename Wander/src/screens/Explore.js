@@ -30,6 +30,7 @@ class ExploreScreen extends Component {
 
  render() {
     return (
+    <View>
       <View style={styles.container}>
         <TouchableHighlight
          style={styles.continue}
@@ -56,19 +57,26 @@ class ExploreScreen extends Component {
                 <Text style={styles.activityPanelText}>Bungee</Text>
             </View>
         </View>
-        <ScrollView styles={deals.container}>
-            <View>
-                <Text style={deals.title}>Biking Adventures: </Text>
-            </View>
-            {/* <View style={deals.itemContainer}> 
-                <Image 
-                    style={deals.itemImage}
-                    source={require('../assets/screens/Explore/Explore2.jpg')}/>
-                <Text style={deals.itemLabel}>China</Text>
-            </View> */}
-            <DealItem />
-        </ScrollView>
-      </View>
+    </View>
+    <ScrollView style={deals.container}>
+        <View>
+            <Text style={deals.title}>Biking Adventures: </Text>
+        </View>
+        {/* <View style={deals.itemContainer}> 
+            <Image 
+                style={deals.itemImage}
+                source={require('../assets/screens/Explore/Explore2.jpg')}/>
+            <Text style={deals.itemLabel}>China</Text>
+        </View> */}
+        <DealItem />
+        <DealItem />
+        <DealItem />
+        <DealItem />
+        <DealItem />
+        <DealItem />
+    </ScrollView>
+      
+    </View>
     )
   }
 }
@@ -77,11 +85,12 @@ export default ExploreScreen;
 
 const deals = StyleSheet.create({
     container: {
+        width: '100%',
+        marginTop: 320,
     },
     title: {
-        padding: 10,
-        paddingTop: 15,
-        fontWeight: 'bold'
+        fontWeight: 'bold',
+        marginLeft: 10
     },
     itemContainer: {
         flex: 1,
@@ -114,6 +123,7 @@ const styles = StyleSheet.create({
   },
   continueImage: {
       overflow: 'hidden',
+      width: 380,
   },
   continueText: {
     position: 'absolute',
@@ -128,6 +138,8 @@ const styles = StyleSheet.create({
     backgroundColor: 'white',
     flexDirection: 'row',
     paddingBottom: 15,
+    width: 380,
+    overflow: 'hidden',
     
   },
   activityPanel: {
