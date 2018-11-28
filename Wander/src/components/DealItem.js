@@ -9,11 +9,14 @@ import {
 } from 'react-native';
 import { Navigation } from 'react-native-navigation';
 
-onDealPress = () => {
-    alert('deal pressed')
-}
+
 
 class DealItem extends Component{
+
+    onDealPress = () => {
+        alert('deal pressed')
+    }
+    
     render(){
         return(
             <TouchableHighlight 
