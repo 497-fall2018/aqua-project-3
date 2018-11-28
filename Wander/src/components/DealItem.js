@@ -40,7 +40,7 @@ class DealItem extends Component{
                         <View style={styles.infoTextContainer}>
                             <Text style={styles.infoText}>Backpacking Expedition in New Zealand</Text>
                         </View>
-                        <View style={styles.timeAndPeopleContainer}>
+                        <View style={styles.nonInfoContainer}>
                             
                         </View>
                         <View style={styles.priceTagContainer}>

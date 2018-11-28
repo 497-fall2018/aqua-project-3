@@ -30,10 +30,13 @@ class LoginScreen extends Component {
                     }
                   }],
                   options: {
-                      bottomTab: {
-                          text: 'Explore',                    
-                          testID: 'FIRST_TAB_BAR_BUTTON'
-                      },
+                    topBar:{
+                      visible: false
+                    },
+                    bottomTab: {
+                      text: 'Explore',                    
+                      testID: 'FIRST_TAB_BAR_BUTTON'
+                    },
                       // topBar: {
                       //     title: {
                       //         text: 'Explore',

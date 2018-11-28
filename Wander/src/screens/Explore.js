@@ -23,6 +23,15 @@ class ExploreScreen extends Component {
             name: 'Wander.Confirm',
             passProps: {
               activityTitle: 'Guided Backpacking Trek'
+            },
+            options:{
+                topBar:{
+                    visible: true,
+                    title: {
+                        text: 'Explore',
+                        fontSize: 18,
+                    }
+                }
             }
         }
     })
@@ -32,7 +41,8 @@ class ExploreScreen extends Component {
     return (
         <ScrollView
             stickyHeaderIndices={[1]}
-            showsVerticalScrollIndicator={false}>
+            showsVerticalScrollIndicator={false}
+            style={{marginTop: 20}}>
             <View style={styles.container}>
                 <TouchableHighlight
                 style={styles.continue}
