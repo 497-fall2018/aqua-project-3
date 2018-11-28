@@ -31,7 +31,7 @@ class LoginScreen extends Component {
                   }],
                   options: {
                       bottomTab: {
-                          text: 'Explore',
+                          text: 'Explore',                    
                           testID: 'FIRST_TAB_BAR_BUTTON'
                       },
                       // topBar: {

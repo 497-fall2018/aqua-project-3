@@ -13,8 +13,8 @@ import DealItem from '../components/DealItem'
 
 class ExploreScreen extends Component {
   constructor(props) {
-    super(props)
-    this.state = { count: 0 }
+    super(props);
+    this.state={};
   }
 
   onPressContinue = () => {
@@ -30,53 +30,56 @@ class ExploreScreen extends Component {
 
  render() {
     return (
-    <View>
-      <View style={styles.container}>
-        <TouchableHighlight
-         style={styles.continue}
-         onPress={this.onPressContinue}
-         underlayColor={'white'}>
-            <View style={styles.continueImage}>
-                <Image 
-                    source={require('../assets/screens/Explore/Explore1.jpeg')} 
-                    style={{width: 470, height: 210}}/>
-                <Text style={styles.continueText}>Continue where you left off >></Text>
+        <ScrollView
+            stickyHeaderIndices={[1]}
+            showsVerticalScrollIndicator={false}>
+            <View style={styles.container}>
+                <TouchableHighlight
+                style={styles.continue}
+                onPress={this.onPressContinue}
+                underlayColor={'white'}>
+                    <View style={styles.continueImage}>
+                        <Image 
+                            source={require('../assets/screens/Explore/Explore1.jpeg')} 
+                            style={{width: 470, height: 210}}/>
+                        <Text style={styles.continueText}>Continue where you left off >></Text>
+                    </View>
+                </TouchableHighlight>
             </View>
-        </TouchableHighlight>
-        <View style={styles.activities}>
-            <View style={[styles.activityPanel, {borderColor: 'green'}]}>
-                <Text style={styles.activityPanelText}>Biking</Text>
+            <View>
+                <View style={styles.activities}>
+                    <View style={[styles.activityPanel, {borderColor: 'green'}]}>
+                        <Text style={styles.activityPanelText}>Biking</Text>
+                    </View>
+                    <View style={styles.activityPanel}>
+                        <Text style={styles.activityPanelText}>Hiking</Text>
+                    </View>
+                    <View style={styles.activityPanel}>
+                        <Text style={styles.activityPanelText}>Skating</Text>
+                    </View>
+                    <View style={styles.activityPanel}>
+                        <Text style={styles.activityPanelText}>Bungee</Text>
+                    </View>
+                </View>
             </View>
-            <View style={styles.activityPanel}>
-                <Text style={styles.activityPanelText}>Hiking</Text>
-            </View>
-            <View style={styles.activityPanel}>
-                <Text style={styles.activityPanelText}>Skating</Text>
-            </View>
-            <View style={styles.activityPanel}>
-                <Text style={styles.activityPanelText}>Bungee</Text>
-            </View>
-        </View>
-    </View>
-    <ScrollView style={deals.container}>
-        <View>
-            <Text style={deals.title}>Biking Adventures: </Text>
-        </View>
-        {/* <View style={deals.itemContainer}> 
-            <Image 
-                style={deals.itemImage}
-                source={require('../assets/screens/Explore/Explore2.jpg')}/>
-            <Text style={deals.itemLabel}>China</Text>
-        </View> */}
-        <DealItem />
-        <DealItem />
-        <DealItem />
-        <DealItem />
-        <DealItem />
-        <DealItem />
-    </ScrollView>
-      
-    </View>
+            <ScrollView style={deals.container}>
+                <View>
+                    <Text style={deals.title}>Biking Adventures: </Text>
+                </View>
+                {/* <View style={deals.itemContainer}> 
+                    <Image 
+                        style={deals.itemImage}
+                        source={require('../assets/screens/Explore/Explore2.jpg')}/>
+                    <Text style={deals.itemLabel}>China</Text>
+                </View> */}
+                <DealItem />
+                <DealItem />
+                <DealItem />
+                <DealItem />
+                <DealItem />
+                <DealItem />
+            </ScrollView>
+        </ScrollView>
     )
   }
 }
@@ -86,7 +89,6 @@ export default ExploreScreen;
 const deals = StyleSheet.create({
     container: {
         width: '100%',
-        marginTop: 320,
     },
     title: {
         fontWeight: 'bold',
@@ -115,7 +117,6 @@ const deals = StyleSheet.create({
 
 const styles = StyleSheet.create({
   container: {
-    position: 'absolute',
     justifyContent: 'center',
   },
   continue: {

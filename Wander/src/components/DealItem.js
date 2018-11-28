@@ -12,16 +12,24 @@ import { Navigation } from 'react-native-navigation';
 
 
 class DealItem extends Component{
+    constructor(props){
+        super(props);
+        this.state={
+
+        };
+    }
+
 
     onDealPress = () => {
-        alert('deal pressed')
+        alert('deal pressed');
     }
-    
+
     render(){
         return(
             <TouchableHighlight 
                 style={styles.container}
-                onPress={this.onDealPress}>
+                onPress={this.onDealPress}
+                underlayColor={'white'}>
                 <View style={styles.itemContainer}> 
                     <View style={styles.imageContainer}>
                         <Image 
@@ -30,7 +38,7 @@ class DealItem extends Component{
                     </View>
                     <View style={styles.infoContainer}>
                         <View style={styles.infoTextContainer}>
-                            <Text style={styles.infoText}>Backpacking in New Zealand</Text>
+                            <Text style={styles.infoText}>Backpacking Expedition in New Zealand</Text>
                         </View>
                         <View style={styles.timeAndPeopleContainer}>
                             
@@ -55,7 +63,7 @@ const styles = StyleSheet.create({
         borderWidth: 1,
         height: 130,
         marginLeft: 10,
-        marginRight: 15,
+        marginRight: 10,
         borderRadius: 10
     },
     imageContainer: {
@@ -71,7 +79,6 @@ const styles = StyleSheet.create({
         marginLeft: -80,
     },
     infoContainer:{
-        backgroundColor: 'black',
         position: 'absolute',
         left: 160,
         width: 195,
@@ -84,7 +91,8 @@ const styles = StyleSheet.create({
     
     },
     infoText: {
-        color: 'black',
+        fontWeight: 'bold',
+        padding: 5,
 
     },
     timeAndPeopleContainer: {},
