@@ -38,7 +38,7 @@ class DealItem extends Component{
                     </View>
                     <View style={styles.infoContainer}>
                         <View style={styles.infoTextContainer}>
-                            <Text style={styles.infoText}>Backpacking Expedition in New Zealand</Text>
+                            <Text style={styles.infoText}>{this.props.title}</Text>
                         </View>
                         <View style={styles.nonInfoContainer}>
                             

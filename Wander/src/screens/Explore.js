@@ -9,12 +9,54 @@ import {
     Image,
 } from 'react-native';
 
-import DealItem from '../components/DealItem'
+import DealItem from '../components/DealItem';
+import AdventurePanel from '../components/AdventurePanel';
+
+
+// ------------------ EXPLORE SCREEN LIST GENERATORS ------------------
+
+const AdventureList = (props) => {
+    return (
+    props.adventures.map((adventure) => (
+        <AdventurePanel 
+            label={adventure}
+            key={adventure}/>
+    )));
+}
+
+const DealList = (props) => {
+    return (
+    props.deals.map((deal) => (
+        <DealItem 
+            title={deal.title}
+            time={deal.time}
+            people={deal.people}/>
+    )));
+}
+
+// ------------------ EXPLORE SCREEN ------------------
 
 class ExploreScreen extends Component {
   constructor(props) {
     super(props);
-    this.state={};
+    this.state={
+        adventures: [
+            'Biking',
+            'Skiing',
+            'Kayaking',
+            'Snorkeling',
+            'Camping',
+        ],
+        deals: [
+            {title: 'Expedition in New Zealand', time: '1 day', people: '6'},
+            {title: 'Expedition in New Zealand', time: '1 day', people: '6'},
+            {title: 'Expedition in New Zealand', time: '1 day', people: '6'},
+            {title: 'Expedition in New Zealand', time: '1 day', people: '6'},
+            {title: 'Expedition in New Zealand', time: '1 day', people: '6'},
+            {title: 'Expedition in New Zealand', time: '1 day', people: '6'},
+            {title: 'Expedition in New Zealand', time: '1 day', people: '6'},
+        ]
+    };
   }
 
   onPressContinue = () => {
@@ -59,40 +101,22 @@ class ExploreScreen extends Component {
             <View style={{backgroundColor: 'white'}}>                 
             <ScrollView
                 horizontal={true}
-                showsHorizontalScrollIndicator={false}>
+                showsHorizontalScrollIndicator={false}
+                decelerationRate={'fast'}>
                 <View style={styles.activities}>
-                    <View style={[styles.activityPanel, {borderColor: 'green'}]}>
-                        <Text style={styles.activityPanelText}>Biking</Text>
-                    </View>
-                    <View style={styles.activityPanel}>
-                        <Text style={styles.activityPanelText}>Hiking</Text>
-                    </View>
-                    <View style={styles.activityPanel}>
-                        <Text style={styles.activityPanelText}>Skating</Text>
-                    </View>
-                    <View style={styles.activityPanel}>
-                        <Text style={styles.activityPanelText}>Bungee</Text>
-                    </View>
+                    <AdventureList
+                        adventures={this.state.adventures} />
                 </View>
+                
             </ScrollView>
             </View>
-            <ScrollView style={deals.container}>
+            <View style={deals.container}>
                 <View>
                     <Text style={deals.title}>Biking Adventures: </Text>
                 </View>
-                {/* <View style={deals.itemContainer}> 
-                    <Image 
-                        style={deals.itemImage}
-                        source={require('../assets/screens/Explore/Explore2.jpg')}/>
-                    <Text style={deals.itemLabel}>China</Text>
-                </View> */}
-                <DealItem />
-                <DealItem />
-                <DealItem />
-                <DealItem />
-                <DealItem />
-                <DealItem />
-            </ScrollView>
+                <DealList 
+                    deals={this.state.deals}/>
+            </View>
         </ScrollView>
     )
   }
@@ -153,21 +177,6 @@ const styles = StyleSheet.create({
     backgroundColor: 'white',
     flexDirection: 'row',
     paddingBottom: 15,
-    
-  },
-  activityPanel: {
-    backgroundColor: 'white',
-    width: 90,
-    height: 90,
-    borderRadius: 10,
-    marginTop: 12,
-    marginLeft: 10,
-    justifyContent: 'center',
-    alignItems: 'center',
-    borderColor: 'whitesmoke',
-    borderWidth: 2,
-  },
-  activityPanelText:{
-    fontWeight: 'bold',  
+    marginRight: 10,
   },
 })
