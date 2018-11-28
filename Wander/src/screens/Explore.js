@@ -56,7 +56,10 @@ class ExploreScreen extends Component {
                     </View>
                 </TouchableHighlight>
             </View>
-            <View>
+            <View style={{backgroundColor: 'white'}}>                 
+            <ScrollView
+                horizontal={true}
+                showsHorizontalScrollIndicator={false}>
                 <View style={styles.activities}>
                     <View style={[styles.activityPanel, {borderColor: 'green'}]}>
                         <Text style={styles.activityPanelText}>Biking</Text>
@@ -71,6 +74,7 @@ class ExploreScreen extends Component {
                         <Text style={styles.activityPanelText}>Bungee</Text>
                     </View>
                 </View>
+            </ScrollView>
             </View>
             <ScrollView style={deals.container}>
                 <View>
@@ -149,8 +153,6 @@ const styles = StyleSheet.create({
     backgroundColor: 'white',
     flexDirection: 'row',
     paddingBottom: 15,
-    width: 380,
-    overflow: 'hidden',
     
   },
   activityPanel: {
