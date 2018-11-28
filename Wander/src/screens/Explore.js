@@ -19,8 +19,8 @@ const AdventureList = (props) => {
     return (
     props.adventures.map((adventure) => (
         <AdventurePanel 
-            label={adventure}
-            key={adventure}/>
+            label={adventure.title}
+            key={adventure.title}/>
     )));
 }
 
@@ -30,7 +30,8 @@ const DealList = (props) => {
         <DealItem 
             title={deal.title}
             time={deal.time}
-            people={deal.people}/>
+            people={deal.people}
+            key={deal.title}/>
     )));
 }
 
@@ -41,11 +42,11 @@ class ExploreScreen extends Component {
     super(props);
     this.state={
         adventures: [
-            'Biking',
-            'Skiing',
-            'Kayaking',
-            'Snorkeling',
-            'Camping',
+            {title: 'Biking'},
+            {title: 'Skiing'},
+            {title: 'Kayaking'},
+            {title: 'Snorkeling'},
+            {title: 'Camping'},
         ],
         deals: [
             {title: 'Expedition in New Zealand', time: '1 day', people: '6'},
