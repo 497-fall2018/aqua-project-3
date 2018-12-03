@@ -11,9 +11,12 @@ import { Navigation } from 'react-native-navigation'
 class AdventurePanel extends Component{
     render(){
         return(
-            <View style={[styles.activityPanel]}>
-                <Text style={styles.activityPanelText}>{this.props.label}</Text>
-            </View>
+            <TouchableHighlight
+                onPress={this.props.onPressPanel}>
+                <View style={[styles.activityPanel]}>
+                    <Text style={styles.activityPanelText}>{this.props.label}</Text>
+                </View>
+            </TouchableHighlight>
         )
     }
 }

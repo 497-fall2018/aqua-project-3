@@ -21,29 +21,29 @@ const AdventureList = (props) => {
     props.adventures.map((adventure) => (
         <AdventurePanel 
             label={adventure.title}
-            key={adventure.title}/>
+            key={adventure.title} 
+            onPressPanel={props.onPressPanel}/>
     )));
 }
 
-const DealList = (props) => {
-    switch(props.adventure) {
-        case('Biking'):
-            return(
-                props.deals.Biking.map((deal) => (
-                    <DealItem 
-                        title={deal.title}
-                        time={deal.time}
-                        people={deal.people}
-                        key={deal.title}/>)))
-        default:
-            return (
-                props.deals.Biking.map((deal) => (
-                    <DealItem 
-                        title={deal.title}
-                        time={deal.time}
-                        people={deal.people}
-                        key={deal.title}/>)));
-    }
+const BikingDealList = (props) => {
+    return (
+        props.deals.Biking.map((deal) => (
+            <DealItem 
+                title={deal.title}
+                time={deal.time}
+                people={deal.people}
+                key={deal.title}/>)));
+}
+
+const SkiingDealList = (props) => {
+    return (
+        props.deals.Skiing.map((deal) => (
+            <DealItem 
+                title={deal.title}
+                time={deal.time}
+                people={deal.people}
+                key={deal.title}/>)));
 }
 
 // ----------------------------------------------------
@@ -61,7 +61,7 @@ class ExploreScreen extends Component {
                 {title: 'Snorkeling'},
                 {title: 'Camping'},
             ],
-            currAdventure: 'ya did something wrong bitch',
+            currAdventure: 'Biking',
             deals: {
                 Biking: 
                 [{title: 'Expedition in New Zealand', time: '1 day', people: '6'},
@@ -110,14 +110,12 @@ class ExploreScreen extends Component {
         })
     }
 
-    // for some reason this isn't setting currAdventure correctly
-    componentDidMount(){
-        this.setState(
-            { currAdventure: 'Biking' }
-        )
+    onPressPanel = () => {
+        alert('hi')
     }
 
     render() {
+    if (this.state.currAdventure === 'Biking'){ 
         return (
             <ScrollView
                 stickyHeaderIndices={[1]}
@@ -143,7 +141,8 @@ class ExploreScreen extends Component {
                         decelerationRate={'fast'}>
                         <View style={styles.activities}>
                             <AdventureList
-                                adventures={this.state.adventures} />
+                                adventures={this.state.adventures}
+                                onPressPanel={this.onPressPanel} />
                         </View>
                     </ScrollView>
                 </View>
@@ -151,14 +150,59 @@ class ExploreScreen extends Component {
                     <View>
                         <Text style={deals.title}>Biking Adventures: </Text>
                     </View>
-                    <DealList 
-                        deals={this.state.deals}
-                        adventure='Biking'/>
+                    <View>
+                        <BikingDealList 
+                            deals={this.state.deals}
+                            adventure='Biking'/>
+                    </View>
                 </View>
             </ScrollView>
-        )
+        )}
+        else {
+            return (
+                <ScrollView
+                    stickyHeaderIndices={[1]}
+                    showsVerticalScrollIndicator={false}
+                    style={{marginTop: 20}}>
+                    <View style={styles.container}>
+                        <TouchableHighlight
+                        style={styles.continue}
+                        onPress={this.onPressContinue}
+                        underlayColor={'white'}>
+                            <View style={styles.continueImage}>
+                                <Image 
+                                    source={require('../assets/screens/Explore/Explore1.jpeg')} 
+                                    style={{width: 470, height: 210}}/>
+                                <Text style={styles.continueText}>Continue where you left off >></Text>
+                            </View>
+                        </TouchableHighlight>
+                    </View>
+                    <View style={{backgroundColor: 'white'}}>                 
+                        <ScrollView
+                            horizontal={true}
+                            showsHorizontalScrollIndicator={false}
+                            decelerationRate={'fast'}>
+                            <View style={styles.activities}>
+                                <AdventureList
+                                    adventures={this.state.adventures}
+                                    onPressPanel={this.onPressPanel} />
+                            </View>
+                        </ScrollView>
+                    </View>
+                    <View style={deals.container}>
+                        <View>
+                            <Text style={deals.title}>Biking Adventures: </Text>
+                        </View>
+                        <View>
+                            <SkiingDealList 
+                                deals={this.state.deals}
+                                adventure='Biking'/>
+                        </View>
+                    </View>
+                </ScrollView>        
+        )}
     }
-    }
+}
 
     export default ExploreScreen;
 
