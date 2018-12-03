@@ -12,7 +12,8 @@ class AdventurePanel extends Component{
     render(){
         return(
             <TouchableHighlight
-                onPress={this.props.onPressPanel}>
+                onPress={this.props.onPressPanel}
+                underlayColor={'white'}>
                 <View style={[styles.activityPanel]}>
                     <Text style={styles.activityPanelText}>{this.props.label}</Text>
                 </View>
