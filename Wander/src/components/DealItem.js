@@ -38,7 +38,7 @@ class DealItem extends Component{
                 <View style={styles.itemContainer}> 
                     <View style={styles.imageContainer}>
                         <Image 
-                            source={require('../assets/screens/Explore/Explore1.jpeg')} 
+                            source={{uri: this.props.url}} 
                             style={styles.image}/>
                     </View>
                     <View style={styles.infoContainer}>

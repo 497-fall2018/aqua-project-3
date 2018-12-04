@@ -34,6 +34,7 @@ const BikingDealList = (props) => {
                 time={deal.time}
                 people={deal.people}
                 description={deal.description}
+                url={deal.source}
                 onDealPressed={() => props.onDealPressed(deal)}
                 key={deal.title}/>)));
 }
@@ -45,6 +46,7 @@ const SkiingDealList = (props) => {
                 title={deal.title}
                 time={deal.time}
                 people={deal.people}
+                url={deal.source}
                 key={deal.title}/>)));
 }
 
@@ -55,6 +57,7 @@ const KayakingDealList = (props) => {
                 title={deal.title}
                 time={deal.time}
                 people={deal.people}
+                url={deal.source}
                 key={deal.title}/>)));
 }
 
@@ -65,6 +68,7 @@ const SnorkelingDealList = (props) => {
                 title={deal.title}
                 time={deal.time}
                 people={deal.people}
+                url={deal.source}
                 key={deal.title}/>)));
 }
 
@@ -86,7 +90,7 @@ class ExploreScreen extends Component {
             currAdventureTitle: 'Biking',
             deals: {
                 Biking: 
-                [{title: 'Eight-Day Tour in Galway', time: '8 days', people: '1', description: "Highlights: On this eight-day tour round-trip from Galway, the routes in this rugged area of west Ireland are away from the main tourist areas, so you can really enjoy the landscape at your own pace. What's Included: Seven nights accommodation with full Irish breakfast; one evening meal; a bike rental; a guide in a support van; luggage transfers; all route details and maps; and a ferry ticket to the Aran Islands."},
+                [{source: "https://slack-imgs.com/?c=1&url=https%3A%2F%2Fwww.frommers.com%2Fsystem%2Fmedia_items%2Fattachments%2F000%2F807%2F877%2Fs500%2F0817-36558.jpg", title: 'Eight-Day Tour in Galway', time: '8 days', people: '1', description: "Highlights: On this eight-day tour round-trip from Galway, the routes in this rugged area of west Ireland are away from the main tourist areas, so you can really enjoy the landscape at your own pace. \n \nWhat's Included: Seven nights accommodation with full Irish breakfast; one evening meal; a bike rental; a guide in a support van; luggage transfers; all route details and maps; and a ferry ticket to the Aran Islands."},
                 {title: 'Expedition in New Hampshire', time: '1 day', people: '6'},
                 {title: 'Expedition in New Zealand', time: '1 day', people: '6'},
                 {title: 'Expedition in New Zealand', time: '1 day', people: '6'},
