@@ -22,7 +22,7 @@ const AdventureList = (props) => {
         <AdventurePanel 
             label={adventure.title}
             key={adventure.title}
-            onPressPanel={props.onPressPanel}/>
+            onPressPanel={() => props.onPressPanel(adventure.title)}/>
     )));
 }
 
@@ -120,22 +120,23 @@ class ExploreScreen extends Component {
         })
     }
 
-    onPressPanel = () => {
-        if (this.state.currAdventure === 'Biking'){
-            this.setState({
-                currAdventure: 'Skiing'
-            })
-        }
-        else if (this.state.currAdventure === 'Skiing'){
-            this.setState({
-                currAdventure: 'Kayaking'
-            })
-        }
-        else {
-            this.setState({
-                currAdventure: 'Biking'
-            })
-        }
+    onPressPanel = (title) => {
+        this.setState({currAdventure: title})
+        // if (this.state.currAdventure === 'Biking'){
+        //     this.setState({
+        //         currAdventure: 'Skiing'
+        //     })
+        // }
+        // else if (this.state.currAdventure === 'Skiing'){
+        //     this.setState({
+        //         currAdventure: 'Kayaking'
+        //     })
+        // }
+        // else {
+        //     this.setState({
+        //         currAdventure: 'Biking'
+        //     })
+        // }
     }
 
     render() {
@@ -175,9 +176,12 @@ class ExploreScreen extends Component {
                         <Text style={deals.title}>Biking Adventures: </Text>
                     </View>
                     <View>
-                        <BikingDealList 
-                            deals={this.state.deals}
-                            adventure='Biking'/>
+                        {this.state.deals.Biking.map((deal) => (
+                <DealItem 
+                    title={deal.title}
+                    time={deal.time}
+                    people={deal.people}
+                    key={deal.title}/>))}
                     </View>
                 </View>
             </ScrollView>
@@ -218,7 +222,7 @@ class ExploreScreen extends Component {
                             <Text style={deals.title}>Biking Adventures: </Text>
                         </View>
                         <View>
-                            <KayakingDealList 
+                            <SkiingDealList 
                                 deals={this.state.deals}
                                 adventure='Skiing'/>
                         </View>
@@ -261,7 +265,7 @@ class ExploreScreen extends Component {
                         <Text style={deals.title}>Biking Adventures: </Text>
                     </View>
                     <View>
-                        <SkiingDealList 
+                        <KayakingDealList 
                             deals={this.state.deals}
                             adventure='Biking'/>
                     </View>
