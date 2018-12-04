@@ -91,7 +91,7 @@ class ExploreScreen extends Component {
             deals: {
                 Biking: 
                 [{source: "https://slack-imgs.com/?c=1&url=https%3A%2F%2Fwww.frommers.com%2Fsystem%2Fmedia_items%2Fattachments%2F000%2F807%2F877%2Fs500%2F0817-36558.jpg", title: 'Eight-Day Tour in Galway', time: '8 days', people: '1', description: "Highlights: On this eight-day tour round-trip from Galway, the routes in this rugged area of west Ireland are away from the main tourist areas, so you can really enjoy the landscape at your own pace. \n \nWhat's Included: Seven nights accommodation with full Irish breakfast; one evening meal; a bike rental; a guide in a support van; luggage transfers; all route details and maps; and a ferry ticket to the Aran Islands."},
-                {title: 'Expedition in New Hampshire', time: '1 day', people: '6'},
+                {source: "https://gosojourn.com/wp-content/uploads/2018/11/ps.jpg", title: 'Expedition in New Hampshire', time: '1 day', people: '6'},
                 {title: 'Expedition in New Zealand', time: '1 day', people: '6'},
                 {title: 'Expedition in New Zealand', time: '1 day', people: '6'},
                 {title: 'Expedition in New Zealand', time: '1 day', people: '6'},
@@ -150,6 +150,8 @@ class ExploreScreen extends Component {
         let description = deal.description;
         let time = deal.time;
         let people = deal.people;
+        let source = deal.source;
+
         Navigation.push(this.props.componentId, {
             component: {
                 name: 'Wander.Description',
@@ -158,6 +160,7 @@ class ExploreScreen extends Component {
                     description: description,
                     time: time,
                     people: people,
+                    url: source,
                 },
                 options:{
                     topBar:{

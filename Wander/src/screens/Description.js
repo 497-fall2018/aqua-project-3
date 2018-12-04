@@ -19,7 +19,7 @@ class DescriptionScreen extends Component{
             <View>
                 <Image 
                     style={styles.activityImage}
-                    source={require('../assets/screens/Explore/Explore1.jpeg')}>
+                    source={{uri: this.props.url}}>
                 </Image>
                 <Text style={styles.activityTitle}>{this.props.title}</Text>
                 <Text style={styles.activityDescription}>
