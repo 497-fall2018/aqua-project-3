@@ -33,6 +33,8 @@ const BikingDealList = (props) => {
                 title={deal.title}
                 time={deal.time}
                 people={deal.people}
+                description={deal.description}
+                onDealPressed={() => props.onDealPressed(deal)}
                 key={deal.title}/>)));
 }
 
@@ -84,7 +86,7 @@ class ExploreScreen extends Component {
             currAdventureTitle: 'Biking',
             deals: {
                 Biking: 
-                [{title: 'Expedition in New Zealand', time: '1 day', people: '6'},
+                [{title: 'Eight-Day Tour in Galway', time: '8 days', people: '1', description: "Highlights: On this eight-day tour round-trip from Galway, the routes in this rugged area of west Ireland are away from the main tourist areas, so you can really enjoy the landscape at your own pace. What's Included: Seven nights accommodation with full Irish breakfast; one evening meal; a bike rental; a guide in a support van; luggage transfers; all route details and maps; and a ferry ticket to the Aran Islands."},
                 {title: 'Expedition in New Hampshire', time: '1 day', people: '6'},
                 {title: 'Expedition in New Zealand', time: '1 day', people: '6'},
                 {title: 'Expedition in New Zealand', time: '1 day', people: '6'},
@@ -139,23 +141,35 @@ class ExploreScreen extends Component {
         })
     }
 
+    onDealPressed = (deal) => {
+        let title = deal.title;
+        let description = deal.description;
+        let time = deal.time;
+        let people = deal.people;
+        Navigation.push(this.props.componentId, {
+            component: {
+                name: 'Wander.Description',
+                passProps: {
+                    title: title,
+                    description: description,
+                    time: time,
+                    people: people,
+                },
+                options:{
+                    topBar:{
+                        visible: true,
+                        title: {
+                            text: 'Explore',
+                            fontSize: 18,
+                        }
+                    }
+                }
+            }
+        })
+    }
+
     onPressPanel = (title) => {
         this.setState({currAdventureTitle: title})
-        // if (this.state.currAdventureTitle === 'Biking'){
-        //     this.setState({
-        //         currAdventureTitle: 'Skiing'
-        //     })
-        // }
-        // else if (this.state.currAdventureTitle === 'Skiing'){
-        //     this.setState({
-        //         currAdventureTitle: 'Kayaking'
-        //     })
-        // }
-        // else {
-        //     this.setState({
-        //         currAdventureTitle: 'Biking'
-        //     })
-        // }
     }
 
     render() {
@@ -195,12 +209,10 @@ class ExploreScreen extends Component {
                         <Text style={deals.title}>Biking Adventures: </Text>
                     </View>
                     <View>
-                        {this.state.deals.Biking.map((deal) => (
-                <DealItem 
-                    title={deal.title}
-                    time={deal.time}
-                    people={deal.people}
-                    key={deal.title}/>))}
+                        <BikingDealList 
+                            deals={this.state.deals}
+                            adventure='Biking'
+                            onDealPressed={this.onDealPressed}/>
                     </View>
                 </View>
             </ScrollView>

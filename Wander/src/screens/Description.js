@@ -21,9 +21,9 @@ class DescriptionScreen extends Component{
                     style={styles.activityImage}
                     source={require('../assets/screens/Explore/Explore1.jpeg')}>
                 </Image>
-                <Text style={styles.activityTitle}>{this.props.activityTitle}</Text>
+                <Text style={styles.activityTitle}>{this.props.title}</Text>
                 <Text style={styles.activityDescription}>
-                    Take a trip to the wonderful made-up-falls in New Zealand! Lorem ipsum dolor yada yada
+                    {this.props.description}
                 </Text>
                 <TouchableHighlight
                     onPress={this.onBook}

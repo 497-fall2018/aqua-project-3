@@ -21,6 +21,7 @@ class DealList extends Component{
                                 title={deal.title}
                                 time={deal.time}
                                 people={deal.people}
+                                description={deal.description}
                                 key={deal.title}/>))}
                     </View>
                 </View>
@@ -37,6 +38,7 @@ class DealList extends Component{
                             title={deal.title}
                             time={deal.time}
                             people={deal.people}
+                            description={deal.description}
                             key={deal.title}/>))}
                 </View>
             </View>
@@ -53,6 +55,7 @@ class DealList extends Component{
                             title={deal.title}
                             time={deal.time}
                             people={deal.people}
+                            description={deal.description}
                             key={deal.title}/>))}
                 </View>
             </View>
@@ -69,6 +72,7 @@ class DealList extends Component{
                             title={deal.title}
                             time={deal.time}
                             people={deal.people}
+                            description={deal.description}
                             key={deal.title}/>))}
                 </View>
             </View>

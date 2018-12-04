@@ -20,15 +20,20 @@ class DealItem extends Component{
     }
 
 
-    onDealPress = () => {
-        alert('deal pressed');
-    }
+    // Biking: 
+    //             [{title: 'Eight-Day Tour in Galway', time: '8 days', people: '1', description: "Highlights: On this eight-day tour round-trip from Galway, the routes in this rugged area of west Ireland are away from the main tourist areas, so you can really enjoy the landscape at your own pace. What's Included: Seven nights accommodation with full Irish breakfast; one evening meal; a bike rental; a guide in a support van; luggage transfers; all route details and maps; and a ferry ticket to the Aran Islands."},
+    //             {title: 'Expedition in New Hampshire', time: '1 day', people: '6'},
+    //             {title: 'Expedition in New Zealand', time: '1 day', people: '6'},
+    //             {title: 'Expedition in New Zealand', time: '1 day', people: '6'},
+    //             {title: 'Expedition in New Zealand', time: '1 day', people: '6'},
+    //             {title: 'Expedition in New Zealand', time: '1 day', people: '6'},
+    //             {title: 'Expedition in New Zealand', time: '1 day', people: '6'}],
 
     render(){
         return(
             <TouchableHighlight 
                 style={styles.container}
-                onPress={this.onDealPress}
+                onPress={this.props.onDealPressed}
                 underlayColor={'white'}>
                 <View style={styles.itemContainer}> 
                     <View style={styles.imageContainer}>

@@ -7,7 +7,7 @@ import {
   View,
 } from 'react-native'
 
-class ProfileScreen extends Component {
+class CartScreen extends Component {
   constructor(props) {
     super(props)
     this.state = { count: 0 }
@@ -33,7 +33,7 @@ class ProfileScreen extends Component {
   }
 }
 
-export default ProfileScreen;
+export default CartScreen;
 
 const styles = StyleSheet.create({
   container: {

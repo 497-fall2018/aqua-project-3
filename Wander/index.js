@@ -11,13 +11,13 @@ import { Navigation } from 'react-native-navigation';
 import LoginScreen from './src/screens/Login';
 import ExploreScreen from './src/screens/Explore';
 import SearchScreen from './src/screens/Search';
-import ProfileScreen from './src/screens/Profile';
+import CartScreen from './src/screens/Cart';
 import DescriptionScreen from './src/screens/Description';
 
 Navigation.registerComponent('Wander.Login', () => LoginScreen);
 Navigation.registerComponent('Wander.Explore', () => ExploreScreen);
 Navigation.registerComponent('Wander.Search', () => SearchScreen);
-Navigation.registerComponent('Wander.Profile', () => ProfileScreen);
+Navigation.registerComponent('Wander.Cart', () => CartScreen);
 Navigation.registerComponent('Wander.Description', ()=> DescriptionScreen);
 
 Navigation.events().registerAppLaunchedListener(()=> {

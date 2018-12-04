@@ -41,12 +41,7 @@ class LoginScreen extends Component {
                       text: 'Explore',                    
                       testID: 'FIRST_TAB_BAR_BUTTON'
                     },
-                      // topBar: {
-                      //     title: {
-                      //         text: 'Explore',
-                      //         color: 'black'
-                      //     }
-                      // },
+                    
                   }
               },
           },
@@ -65,8 +60,10 @@ class LoginScreen extends Component {
                 }
           },
           {
+            stack: {
+              children: [{
               component: {
-                  name: 'Wander.Profile',
+                  name: 'Wander.Cart',
                   passProps: {
                     text: 'Test'
                   },
@@ -74,9 +71,14 @@ class LoginScreen extends Component {
                     bottomTab: {
                       text: 'Cart',
                       testID: 'THIRD_TAB_BAR_BUTTON'
-                    }
+                    },
+                    topBar:{
+                      visible: false,
+                  }
                   }
                 }
+              }]
+            }
           }]
         }
       }
