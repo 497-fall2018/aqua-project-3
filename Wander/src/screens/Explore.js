@@ -56,6 +56,16 @@ const KayakingDealList = (props) => {
                 key={deal.title}/>)));
 }
 
+const SnorkelingDealList = (props) => {
+    return (
+        props.deals.Snorkeling.map((deal) => (
+            <DealItem 
+                title={deal.title}
+                time={deal.time}
+                people={deal.people}
+                key={deal.title}/>)));
+}
+
 // ----------------------------------------------------
 // ------------------ EXPLORE SCREEN ------------------
 // ----------------------------------------------------
@@ -71,7 +81,7 @@ class ExploreScreen extends Component {
                 {title: 'Snorkeling'},
                 {title: 'Camping'},
             ],
-            currAdventure: 'Biking',
+            currAdventureTitle: 'Biking',
             deals: {
                 Biking: 
                 [{title: 'Expedition in New Zealand', time: '1 day', people: '6'},
@@ -96,6 +106,15 @@ class ExploreScreen extends Component {
                 {title: 'Kayaking in Puerto Rico', time: '1 day', people: '4'},
                 {title: 'Kayaking in Puerto Rico', time: '1 day', people: '4'},
                 {title: 'Kayaking in Puerto Rico', time: '1 day', people: '4'},],
+                Snorkeling:
+                [{title: 'Snorkeling in Puerto Rico', time: '1 day', people: '4'},
+                {title: 'Kayaking in Puerto Rico', time: '1 day', people: '4'},
+                {title: 'Kayaking in Puerto Rico', time: '1 day', people: '4'},
+                {title: 'Kayaking in Puerto Rico', time: '1 day', people: '4'},
+                {title: 'Kayaking in Puerto Rico', time: '1 day', people: '4'},
+                {title: 'Kayaking in Puerto Rico', time: '1 day', people: '4'},
+                {title: 'Kayaking in Puerto Rico', time: '1 day', people: '4'},
+                {title: 'Kayaking in Puerto Rico', time: '1 day', people: '4'},],
             }
         }
     };
@@ -103,9 +122,9 @@ class ExploreScreen extends Component {
     onPressContinue = () => {
         Navigation.push(this.props.componentId, {
             component: {
-                name: 'Wander.Confirm',
+                name: 'Wander.Description',
                 passProps: {
-                activityTitle: 'Guided Backpacking Trek'
+                    activityTitle: 'Guided Backpacking Trek'
                 },
                 options:{
                     topBar:{
@@ -121,26 +140,26 @@ class ExploreScreen extends Component {
     }
 
     onPressPanel = (title) => {
-        this.setState({currAdventure: title})
-        // if (this.state.currAdventure === 'Biking'){
+        this.setState({currAdventureTitle: title})
+        // if (this.state.currAdventureTitle === 'Biking'){
         //     this.setState({
-        //         currAdventure: 'Skiing'
+        //         currAdventureTitle: 'Skiing'
         //     })
         // }
-        // else if (this.state.currAdventure === 'Skiing'){
+        // else if (this.state.currAdventureTitle === 'Skiing'){
         //     this.setState({
-        //         currAdventure: 'Kayaking'
+        //         currAdventureTitle: 'Kayaking'
         //     })
         // }
         // else {
         //     this.setState({
-        //         currAdventure: 'Biking'
+        //         currAdventureTitle: 'Biking'
         //     })
         // }
     }
 
     render() {
-    if (this.state.currAdventure === 'Biking'){ 
+    if (this.state.currAdventureTitle === 'Biking'){ 
         return (
             <ScrollView
                 stickyHeaderIndices={[1]}
@@ -186,7 +205,7 @@ class ExploreScreen extends Component {
                 </View>
             </ScrollView>
         )}
-    else if (this.state.currAdventure === 'Skiing') {
+    else if (this.state.currAdventureTitle === 'Skiing') {
             return (
                 <ScrollView
                     stickyHeaderIndices={[1]}
@@ -219,7 +238,7 @@ class ExploreScreen extends Component {
                     </View>
                     <View style={deals.container}>
                         <View>
-                            <Text style={deals.title}>Biking Adventures: </Text>
+                            <Text style={deals.title}>Skiing Adventures: </Text>
                         </View>
                         <View>
                             <SkiingDealList 
@@ -229,6 +248,49 @@ class ExploreScreen extends Component {
                     </View>
                 </ScrollView>        
         )}
+    else if (this.state.currAdventureTitle === 'Kayaking') {
+        return (
+            <ScrollView
+                stickyHeaderIndices={[1]}
+                showsVerticalScrollIndicator={false}
+                style={{marginTop: 20}}>
+                <View style={styles.container}>
+                    <TouchableHighlight
+                    style={styles.continue}
+                    onPress={this.onPressContinue}
+                    underlayColor={'white'}>
+                        <View style={styles.continueImage}>
+                            <Image 
+                                source={require('../assets/screens/Explore/Explore1.jpeg')} 
+                                style={{width: 470, height: 210}}/>
+                            <Text style={styles.continueText}>Continue where you left off >></Text>
+                        </View>
+                    </TouchableHighlight>
+                </View>
+                <View style={{backgroundColor: 'white'}}>                 
+                    <ScrollView
+                        horizontal={true}
+                        showsHorizontalScrollIndicator={false}
+                        decelerationRate={'fast'}>
+                        <View style={styles.activities}>
+                            <AdventureList
+                                adventures={this.state.adventures}
+                                onPressPanel={this.onPressPanel} />
+                        </View>
+                    </ScrollView>
+                </View>
+                <View style={deals.container}>
+                    <View>
+                        <Text style={deals.title}>Kayaking Adventures: </Text>
+                    </View>
+                    <View>
+                        <KayakingDealList 
+                            deals={this.state.deals}
+                            adventure='Kayaking'/>
+                    </View>
+                </View>
+            </ScrollView>) 
+        }
     else {
         return (
             <ScrollView
@@ -262,15 +324,15 @@ class ExploreScreen extends Component {
                 </View>
                 <View style={deals.container}>
                     <View>
-                        <Text style={deals.title}>Biking Adventures: </Text>
+                        <Text style={deals.title}>Snorkeling Adventures: </Text>
                     </View>
                     <View>
-                        <KayakingDealList 
+                        <SnorkelingDealList 
                             deals={this.state.deals}
                             adventure='Biking'/>
                     </View>
                 </View>
-            </ScrollView>) 
+            </ScrollView>)
     }
     }
 }

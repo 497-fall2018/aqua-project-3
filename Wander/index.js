@@ -12,13 +12,13 @@ import LoginScreen from './src/screens/Login';
 import ExploreScreen from './src/screens/Explore';
 import SearchScreen from './src/screens/Search';
 import ProfileScreen from './src/screens/Profile';
-import ConfirmScreen from './src/screens/Confirm';
+import DescriptionScreen from './src/screens/Description';
 
 Navigation.registerComponent('Wander.Login', () => LoginScreen);
 Navigation.registerComponent('Wander.Explore', () => ExploreScreen);
 Navigation.registerComponent('Wander.Search', () => SearchScreen);
 Navigation.registerComponent('Wander.Profile', () => ProfileScreen);
-Navigation.registerComponent('Wander.Confirm', ()=> ConfirmScreen);
+Navigation.registerComponent('Wander.Description', ()=> DescriptionScreen);
 
 Navigation.events().registerAppLaunchedListener(()=> {
     Navigation.setRoot({

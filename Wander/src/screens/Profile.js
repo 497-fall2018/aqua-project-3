@@ -14,6 +14,8 @@ class ProfileScreen extends Component {
   }
 
   onPress = () => {
+    alert('pressed')
+    this.props.testFunction
   }
 
  render() {
@@ -24,7 +26,7 @@ class ProfileScreen extends Component {
          onPress={this.onPress}
          underlayColor={'white'}
         >
-         <Text>Profile</Text>
+         <Text>Cart</Text>
         </TouchableHighlight>
       </View>
     )

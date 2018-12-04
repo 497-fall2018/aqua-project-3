@@ -14,6 +14,10 @@ class LoginScreen extends Component {
     this.state = { count: 0 }
   }
 
+  checkFunction = () => {
+    alert('yeet')
+  }
+
   onPress = () => {
     Navigation.setRoot({
       root: {
@@ -64,11 +68,11 @@ class LoginScreen extends Component {
               component: {
                   name: 'Wander.Profile',
                   passProps: {
-                    text: 'This is tab 3'
+                    text: 'Test'
                   },
                   options: {
                     bottomTab: {
-                      text: 'Profile',
+                      text: 'Cart',
                       testID: 'THIRD_TAB_BAR_BUTTON'
                     }
                   }

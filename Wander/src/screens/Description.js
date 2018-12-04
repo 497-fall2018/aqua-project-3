@@ -8,7 +8,7 @@ import {
     TouchableHighlight,
  } from 'react-native';
 
-class ConfirmScreen extends Component{
+class DescriptionScreen extends Component{
 
     onBook = () => {
         alert("Congratulations! You're going to New Zealand! See your inbox for a confirmation and have a great journey.")
@@ -39,7 +39,7 @@ class ConfirmScreen extends Component{
     }
 }
 
-export default ConfirmScreen;
+export default DescriptionScreen;
 
 const styles = StyleSheet.create({
     container: {
