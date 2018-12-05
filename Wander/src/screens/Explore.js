@@ -90,13 +90,17 @@ class ExploreScreen extends Component {
             currAdventureTitle: 'Biking',
             deals: {
                 Biking: 
-                [{source: "https://slack-imgs.com/?c=1&url=https%3A%2F%2Fwww.frommers.com%2Fsystem%2Fmedia_items%2Fattachments%2F000%2F807%2F877%2Fs500%2F0817-36558.jpg", title: 'Eight-Day Tour in Galway', time: '8 days', people: '1', description: "Highlights: On this eight-day tour round-trip from Galway, the routes in this rugged area of west Ireland are away from the main tourist areas, so you can really enjoy the landscape at your own pace. \n \nWhat's Included: Seven nights accommodation with full Irish breakfast; one evening meal; a bike rental; a guide in a support van; luggage transfers; all route details and maps; and a ferry ticket to the Aran Islands."},
+                [{source: "https://slack-imgs.com/?c=1&url=https%3A%2F%2Fwww.frommers.com%2Fsystem%2Fmedia_items%2Fattachments%2F000%2F807%2F877%2Fs500%2F0817-36558.jpg", 
+                    title: 'Eight-Day Tour in Galway', 
+                    time: '8 days', 
+                    people: '1', 
+                    description: "Highlights: On this eight-day tour round-trip from Galway, the routes in this rugged area of west Ireland are away from the main tourist areas, so you can really enjoy the landscape at your own pace. \n \nWhat's Included: Seven nights accommodation with full Irish breakfast; one evening meal; a bike rental; a guide in a support van; luggage transfers; all route details and maps; and a ferry ticket to the Aran Islands."},
                 {source: "https://gosojourn.com/wp-content/uploads/2018/11/ps.jpg", title: 'Expedition in New Hampshire', time: '1 day', people: '6'},
-                {title: 'Expedition in New Zealand', time: '1 day', people: '6'},
-                {title: 'Expedition in New Zealand', time: '1 day', people: '6'},
-                {title: 'Expedition in New Zealand', time: '1 day', people: '6'},
-                {title: 'Expedition in New Zealand', time: '1 day', people: '6'},
-                {title: 'Expedition in New Zealand', time: '1 day', people: '6'}],
+                {source: "https://backroads-web.s3.amazonaws.com/images/search/thumbnail/dolomites-bike-tour.jpg", title: 'Expedition in Italy and Austria', time: '1 day', people: '6', description: "The Dolomites - A Peak Experience in Italy & Austria"},
+                {source: "https://backroads-web.s3.amazonaws.com/images/search/thumbnail/piedmont-bike-tour.jpg", title: 'Expedition in Italy', time: '1 day', people: '6', description: "Slow Food & Wine Lover's Paradise in Piemonte"},
+                {source: "https://backroads-web.s3.amazonaws.com/images/search/thumbnail/chablis-burgundy-bike-tour.jpg", title: 'Expedition in Burgundy', time: '1 day', people: '6', description: "Quaint Villages & World-Class Vineyards"},
+                {source: "https://backroads-web.s3.amazonaws.com/images/search/thumbnail/french-pyrenees-rioja-bike-tour.jpg", title: 'Expedition in Basque Country', time: '1 day', people: '6', description: "French Pyrenees & Spain's Rioja"},
+                {source: "https://backroads-web.s3.amazonaws.com/images/search/thumbnail/andalucia-bike-tour.jpg", title: 'Expedition in Southern Spain\'s Andalucia', time: '1 day', people: '6', description: "Flamenco & Vistas - Sevilla to Granada"}],
                 Skiing:
                 [{title: 'Skiing in Colorado', time: '3 days', people: '4'},
                 {title: 'Skiing in Colorado', time: '3 days', people: '4'},
