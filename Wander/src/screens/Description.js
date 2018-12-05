@@ -9,11 +9,69 @@ import {
  } from 'react-native';
 
 class DescriptionScreen extends Component{
+    constructor(props){
+        super(props)
+        this.state={
+            addText: 'Add to Cart',
+            added: false,
+            style: {
+                marginLeft: 120,
+                marginTop: 10,
+                marginRight: 120,
+                height: 40,
+                borderColor: 'black',
+                borderRadius: 5,
+                borderWidth: 1,
+                alignItems: 'center',
+                justifyContent: 'center',
+                backgroundColor: 'white'
+            },
+            textStyle: {
 
-    onBook = () => {
-        alert("Congratulations! You're going to New Zealand! See your inbox for a confirmation and have a great journey.")
+            }
+        }
     }
-    
+
+    addToCart = () => {
+        if (this.state.added === false){
+            this.setState({addText: 'Added!', added: true, textStyle: {
+                color: 'green'}, 
+                style: 
+                    {
+                        marginLeft: 120,
+                        marginTop: 10,
+                        marginRight: 120,
+                        height: 40,
+                        borderColor: 'green',
+                        borderRadius: 5,
+                        borderWidth: 1,
+                        alignItems: 'center',
+                        justifyContent: 'center',
+                        backgroundColor: 'white'
+                    }
+                })
+        }
+        else{
+            this.setState({addText: 'Add to Cart', added: false, textStyle: {
+                color: 'black'}, 
+                style: 
+                    {
+                        marginLeft: 120,
+                        marginTop: 10,
+                        marginRight: 120,
+                        height: 40,
+                        borderColor: 'black',
+                        borderRadius: 5,
+                        borderWidth: 1,
+                        alignItems: 'center',
+                        justifyContent: 'center',
+                        backgroundColor: 'white'
+                    }
+                })
+        }
+        
+    }
+
     render(){
         return(
             <View>
@@ -27,12 +85,10 @@ class DescriptionScreen extends Component{
                 </Text>
                 <TouchableHighlight
                     onPress={this.onBook}
-                    style={styles.activityConfirm}
-                    underlayColor="white">
-                    <View 
-                        style={styles.activityConfiram}>
-                        <Text>Let's Go</Text>
-                    </View>
+                    style={this.state.style}
+                    underlayColor="white"
+                    onPress={this.addToCart}>
+                        <Text style={this.state.textStyle}>{this.state.addText}</Text>
                 </TouchableHighlight>
             </View>
         )
