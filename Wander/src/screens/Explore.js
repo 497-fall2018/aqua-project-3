@@ -98,10 +98,6 @@ class ExploreScreen extends Component {
                     time: '8 days', 
                     people: '1', 
                     description: "Highlights: On this eight-day tour round-trip from Galway, the routes in this rugged area of west Ireland are away from the main tourist areas, so you can really enjoy the landscape at your own pace. \n \nWhat's Included: Seven nights accommodation with full Irish breakfast; one evening meal; a bike rental; a guide in a support van; luggage transfers; all route details and maps; and a ferry ticket to the Aran Islands."},
-                {source: "https://gosojourn.com/wp-content/uploads/2018/11/ps.jpg", 
-                    title: 'Expedition in New Hampshire',
-                    time: '1 day', 
-                    people: '4'},
                 {source: "https://backroads-web.s3.amazonaws.com/images/search/thumbnail/dolomites-bike-tour.jpg",
                     title: 'Valley Excursion in Italy and Austria', 
                     time: '2 day', 
@@ -195,14 +191,22 @@ class ExploreScreen extends Component {
                 }],
                 
                 Snorkeling:
-                [{title: 'Snorkeling in Puerto Rico', time: '1 day', people: '4'},
-                {title: 'Kayaking in Puerto Rico', time: '1 day', people: '4'},
-                {title: 'Kayaking in Puerto Rico', time: '1 day', people: '4'},
-                {title: 'Kayaking in Puerto Rico', time: '1 day', people: '4'},
-                {title: 'Kayaking in Puerto Rico', time: '1 day', people: '4'},
-                {title: 'Kayaking in Puerto Rico', time: '1 day', people: '4'},
-                {title: 'Kayaking in Puerto Rico', time: '1 day', people: '4'},
-                {title: 'Kayaking in Puerto Rico', time: '1 day', people: '4'},],
+                [{source: "https://www.wildernesstravel.com/images/trips/latin-america/belize/belize-private-journey/1-slide-man-snorkeling-with-colorful-fish-med.jpg",
+                    title: 'Belize Private Journey', 
+                    time: '8 day', 
+                    people: '1-4',
+                    description: "Experience amazing snorkeling at Turneffe Island on the Belize Barrier Reef, and hiking and Mayan discoveries at beautiful Chaa Creek Lodge in the verdant Maya Mountains."},
+                {source: "https://www.wildernesstravel.com/images/trips/latin-america/dominican-republic/snorkeling-with-the-humpbacks-of-the-silver-bank/1-slide-snorkeling-humbacks-ocean-med.jpg",
+                    title: 'Snorkeling with the Humpbacks of the Silver Bank', 
+                    time: '8 day', 
+                    people: '1-10',
+                    description: "Snorkel and swim with humpback whales on the Silver Bank, a unique marine mammal sanctuary 70 miles off the Dominican Republic, with accommodations aboard a 124-foot motor yacht."},
+                {source: "https://www.wildernesstravel.com/images/trips/galapagos/ecuador/enchanted-isles/1-slide-enchanted-galapagos-underwater-sea-turtle-med.jpg",
+                    title: 'Enchanted Isles', 
+                    time: '10 day', 
+                    people: '1-4',
+                    description: "Voyage through the western islands of the Galápagos, snorkel with playful sea lions, hike past dancing blue-footed boobies, and experience the wonder of Darwin's islands on this fascinating 8-day cruise."
+                }],
             }
         }
     };
