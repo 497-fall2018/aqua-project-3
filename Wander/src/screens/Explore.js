@@ -85,7 +85,6 @@ class ExploreScreen extends Component {
                 {title: 'Skiing'},
                 {title: 'Kayaking'},
                 {title: 'Snorkeling'},
-                {title: 'Camping'},
             ],
             currAdventureTitle: 'Biking',
             deals: {
@@ -342,7 +341,8 @@ class ExploreScreen extends Component {
                         <View>
                             <SkiingDealList 
                                 deals={this.state.deals}
-                                adventure='Skiing'/>
+                                adventure='Skiing'
+                                onDealPressed={this.onDealPressed}/>
                         </View>
                     </View>
                 </ScrollView>        
@@ -385,7 +385,8 @@ class ExploreScreen extends Component {
                     <View>
                         <KayakingDealList 
                             deals={this.state.deals}
-                            adventure='Kayaking'/>
+                            adventure='Kayaking'
+                            onDealPressed={this.onDealPressed}/>
                     </View>
                 </View>
             </ScrollView>) 
@@ -428,7 +429,8 @@ class ExploreScreen extends Component {
                     <View>
                         <SnorkelingDealList 
                             deals={this.state.deals}
-                            adventure='Biking'/>
+                            adventure='Biking'
+                            onDealPressed={this.onDealPressed}/>
                     </View>
                 </View>
             </ScrollView>)
