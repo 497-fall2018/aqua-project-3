@@ -47,6 +47,7 @@ const SkiingDealList = (props) => {
                 time={deal.time}
                 people={deal.people}
                 url={deal.source}
+                onDealPressed={() => props.onDealPressed(deal)}
                 key={deal.title}/>)));
 }
 
@@ -58,6 +59,7 @@ const KayakingDealList = (props) => {
                 time={deal.time}
                 people={deal.people}
                 url={deal.source}
+                onDealPressed={() => props.onDealPressed(deal)}
                 key={deal.title}/>)));
 }
 
@@ -69,6 +71,7 @@ const SnorkelingDealList = (props) => {
                 time={deal.time}
                 people={deal.people}
                 url={deal.source}
+                onDealPressed={() => props.onDealPressed(deal)}
                 key={deal.title}/>)));
 }
 
