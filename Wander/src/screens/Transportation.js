@@ -24,7 +24,7 @@ class TransportationScreen extends Component {
                     topBar:{
                         visible: true,
                         title: {
-                            text: 'Lock it in',
+                            text: 'Confirm',
                             fontSize: 18,
                         }
                     }

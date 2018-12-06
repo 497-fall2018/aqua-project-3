@@ -14,9 +14,7 @@ import { Navigation } from 'react-native-navigation';
 class DealItem extends Component{
     constructor(props){
         super(props);
-        this.state={
-
-        };
+        this.state={};
     }
 
 
@@ -30,6 +28,14 @@ class DealItem extends Component{
     //             {title: 'Expedition in New Zealand', time: '1 day', people: '6'}],
 
     render(){
+
+        // function generateRandomNumber(min_value , max_value) 
+        //     {
+        //         return Math.floor(Math.random() * (max_value-min_value) + min_value) ;
+        //     } 
+
+        let price = this.props.price;
+    
         return(
             <TouchableHighlight 
                 style={styles.container}
@@ -45,11 +51,8 @@ class DealItem extends Component{
                         <View style={styles.infoTextContainer}>
                             <Text style={styles.infoText}>{this.props.title}</Text>
                         </View>
-                        <View style={styles.nonInfoContainer}>
-                            
-                        </View>
                         <View style={styles.priceTagContainer}>
-
+                            <Text style={styles.priceTag}>{'$' + price}</Text>
                         </View>
                     </View>
                 </View>
@@ -98,10 +101,18 @@ const styles = StyleSheet.create({
     infoText: {
         fontWeight: 'bold',
         padding: 5,
+        paddingRight: 10,
 
     },
     timeAndPeopleContainer: {},
-    priceTagContainer: {},
+    priceTagContainer: {
+        flex: 1,
+        justifyContent: 'center',
+        alignItems: 'center'
+    },
+    priceTag: {
+        fontSize: 18
+    }
     
 
 })

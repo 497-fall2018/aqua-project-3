@@ -79,7 +79,7 @@ class DescriptionScreen extends Component{
                     style={styles.activityImage}
                     source={{uri: this.props.url}}>
                 </Image>
-                <Text style={styles.activityTitle}>{this.props.title}</Text>
+                <Text style={styles.activityTitle}>{this.props.title} for ${this.props.price} </Text>
                 <Text style={styles.activityDescription}>
                     {this.props.description}
                 </Text>
@@ -126,5 +126,5 @@ const styles = StyleSheet.create({
         alignItems: 'center',
         justifyContent: 'center',
         backgroundColor: 'white'
-    }
+    },
 })
