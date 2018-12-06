@@ -13,12 +13,16 @@ import ExploreScreen from './src/screens/Explore';
 import SearchScreen from './src/screens/Search';
 import CartScreen from './src/screens/Cart';
 import DescriptionScreen from './src/screens/Description';
+import TransportationScreen from './src/screens/Transportation';
+import ConfirmScreen from './src/screens/Confirm';
 
 Navigation.registerComponent('Wander.Login', () => LoginScreen);
 Navigation.registerComponent('Wander.Explore', () => ExploreScreen);
 Navigation.registerComponent('Wander.Search', () => SearchScreen);
 Navigation.registerComponent('Wander.Cart', () => CartScreen);
 Navigation.registerComponent('Wander.Description', ()=> DescriptionScreen);
+Navigation.registerComponent('Wander.Transportation', ()=> TransportationScreen);
+Navigation.registerComponent('Wander.Confirm', () => ConfirmScreen);
 
 Navigation.events().registerAppLaunchedListener(()=> {
     Navigation.setRoot({

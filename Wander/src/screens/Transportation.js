@@ -8,25 +8,23 @@ import {
 } from 'react-native'
 import { Navigation } from 'react-native-navigation'
 
-import CartItem from '../components/CartItem';
-
-class CartScreen extends Component {
+class TransportationScreen extends Component {
   constructor(props) {
     super(props)
     this.state = { count: 0 }
   }
 
-  onCheckout = () => {
+  onPressContinue = () => {
     Navigation.push(this.props.componentId, {
             component: {
-                name: 'Wander.Transportation',
+                name: 'Wander.Confirm',
                 passProps: {
                 },
                 options:{
                     topBar:{
                         visible: true,
                         title: {
-                            text: 'Choose your Flight',
+                            text: 'Lock it in',
                             fontSize: 18,
                         }
                     }
@@ -38,17 +36,16 @@ class CartScreen extends Component {
  render() {
     return (
       <View style={styles.container}>
-        <CartItem />
         <TouchableHighlight
-          onPress={this.onCheckout}>
-          <Text>Check Out</Text>
+          onPress={this.onPressContinue}>
+          <Text>Transportation</Text>
         </TouchableHighlight>
       </View>
     )
   }
 }
 
-export default CartScreen;
+export default TransportationScreen;
 
 const styles = StyleSheet.create({
   container: {
