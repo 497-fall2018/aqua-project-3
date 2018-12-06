@@ -34,7 +34,7 @@ class CartScreen extends Component {
                     topBar:{
                         visible: true,
                         title: {
-                            text: 'Flight',
+                            text: 'Flights',
                             fontSize: 18,
                         }
                     }
@@ -46,6 +46,9 @@ class CartScreen extends Component {
  render() {
     return (
       <View style={styles.container}>
+        
+        <Text style={styles.header}>Your Cart: </Text>
+
         <DealItem 
           title={this.state.deal.title}
           time={this.state.deal.time}
@@ -53,11 +56,14 @@ class CartScreen extends Component {
           description={this.state.deal.description}
           url={this.state.deal.source}
           price={this.state.deal.price}
-          key={this.state.deal.title}/>
+          key={this.state.deal.title}>
+        </DealItem>
+
         <TouchableHighlight
           onPress={this.onCheckout}
-          style={styles.checkoutContainer}>
-          <Text>Checkout</Text>
+          style={styles.checkoutContainer}
+          underlayColor='white'>
+          <Text style={styles.checkout}>Find Flights</Text>
         </TouchableHighlight>
       </View>
     )
@@ -72,8 +78,22 @@ const styles = StyleSheet.create({
     justifyContent: 'center',
     backgroundColor:'white'
   },
+  header:{
+    marginLeft: 10,
+    fontWeight: 'bold',
+  },
   checkoutContainer: {
-
-  }
+    marginLeft: 120,
+    marginTop: 10,
+    marginRight: 120,
+    height: 40,
+    borderColor: 'black',
+    borderRadius: 5,
+    borderWidth: 1,
+    alignItems: 'center',
+    justifyContent: 'center',
+    backgroundColor: 'white'
+  },
+  checkout: {}
   
 })
