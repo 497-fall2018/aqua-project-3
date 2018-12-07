@@ -4,7 +4,8 @@ import {
   StyleSheet,
   TouchableHighlight,
   Text,
-  View
+  View,
+  ScrollView
 } from "react-native";
 import { Navigation } from "react-native-navigation";
 import DealItem from "../components/DealItem";
@@ -25,7 +26,7 @@ class ConfirmScreen extends Component {
       parseInt(this.props.deal.price) + parseInt(this.props.flight1.cost);
     total = total.toString();
     return (
-      <View style={styles.container}>
+      <ScrollView style={styles.container}>
         <Text style={styles.header}>Reviewing your Order</Text>
         <Text style={styles.subHeader}>Deal</Text>
         <DealItem
@@ -50,7 +51,7 @@ class ConfirmScreen extends Component {
         >
           <Text style={{ fontWeight: "bold" }}>Lock It In</Text>
         </TouchableHighlight>
-      </View>
+      </ScrollView>
     );
   }
 }
