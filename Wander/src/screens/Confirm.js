@@ -14,12 +14,19 @@ class ConfirmScreen extends Component {
     this.state = {}
   }
 
+  onCheckout = () => {
+    alert('Thanks for booking! A confirmation email will be sent shortly.');
+  }
+
  render() {
     return (
       <View style={styles.container}>
+        <Text style={styles.header}>Reviewing your Order</Text>
         <TouchableHighlight
-          onPress={this.onCheckout}>
-          <Text>Confirmation</Text>
+          onPress={this.onCheckout}
+          style={styles.lockInButton}
+          underlayColor='white'>
+          <Text style={{fontWeight: 'bold'}}>Lock It In</Text>
         </TouchableHighlight>
       </View>
     )
@@ -31,21 +38,21 @@ export default ConfirmScreen;
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    justifyContent: 'center',
-    paddingHorizontal: 10,
-    backgroundColor:'whitesmoke'
   },
-  button: {
-    alignItems: 'center',
+  header: {
+    fontWeight: 'bold',
     padding: 10,
-    backgroundColor: 'white',
+  },
+  lockInButton: {
+    marginLeft: 120,
+    marginTop: 10,
+    marginRight: 120,
+    height: 40,
+    borderColor: 'black',
     borderRadius: 5,
-  },
-  countContainer: {
+    borderWidth: 2,
     alignItems: 'center',
-    padding: 10
-  },
-  countText: {
-    color: '#FF00FF'
+    justifyContent: 'center',
+    backgroundColor: 'white'
   }
 })

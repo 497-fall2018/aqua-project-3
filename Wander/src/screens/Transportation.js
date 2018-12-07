@@ -36,8 +36,14 @@ class TransportationScreen extends Component {
   render() {
     return (
       <View style={styles.container}>
-        <TouchableHighlight onPress={this.onPressContinue}>
-          <Text>Transportation</Text>
+        <Text style={styles.header}>Transportation</Text>
+
+        <TouchableHighlight
+          onPress={this.onPressContinue}
+          style={styles.continue}
+          underlayColor="white"
+        >
+          <Text>Continue</Text>
         </TouchableHighlight>
         <FlightItem
           flight={{
@@ -56,22 +62,22 @@ export default TransportationScreen;
 
 const styles = StyleSheet.create({
   container: {
-    flex: 1,
-    justifyContent: "center",
-    paddingHorizontal: 10,
-    backgroundColor: "whitesmoke"
+    flex: 1
   },
-  button: {
-    alignItems: "center",
-    padding: 10,
-    backgroundColor: "white",
-    borderRadius: 5
-  },
-  countContainer: {
-    alignItems: "center",
+  header: {
+    fontWeight: "bold",
     padding: 10
   },
-  countText: {
-    color: "#FF00FF"
+  continue: {
+    marginLeft: 120,
+    marginTop: 10,
+    marginRight: 120,
+    height: 40,
+    borderColor: "black",
+    borderRadius: 5,
+    borderWidth: 1,
+    alignItems: "center",
+    justifyContent: "center",
+    backgroundColor: "white"
   }
 });

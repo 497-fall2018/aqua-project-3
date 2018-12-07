@@ -25,12 +25,12 @@ Navigation.registerComponent('Wander.Transportation', ()=> TransportationScreen)
 Navigation.registerComponent('Wander.Confirm', () => ConfirmScreen);
 
 Navigation.events().registerAppLaunchedListener(()=> {
-    Navigation.setRoot({
-        root: {
-          component:{
-            name: 'Wander.Login',
-          }
+  Navigation.setRoot({
+      root: {
+        component:{
+          name: 'Wander.Login',
         }
-      });
+      }
+    });
 })
 
