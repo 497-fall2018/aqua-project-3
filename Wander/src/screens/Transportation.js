@@ -12,7 +12,28 @@ import FlightItem from "../components/FlightItem";
 class TransportationScreen extends Component {
   constructor(props) {
     super(props);
-    this.state = { count: 0 };
+    this.state = {
+      count: 0,
+      flights: {
+        iceland: {
+          name: "Iceland",
+          takeoff: "ORD",
+          destination: "ICN",
+          cost: "$569.00",
+          date: "12/15/18",
+          time: "10:45 AM"
+        },
+        gmp: {
+          name: "GMP",
+          takeoff: "MDW",
+          destination: "GMP",
+          cost: "$450.00",
+          date: "12/16/18",
+          time: "4:40 AM"
+        }
+      }
+    };
+    this.handleFlightSelect = this.handleFlightSelect.bind(this);
   }
 
   onPressContinue = () => {
@@ -33,11 +54,24 @@ class TransportationScreen extends Component {
     });
   };
 
+  handleFlightSelect(e) {
+    this.setState({ selectedFlight: e.target });
+  }
+
   render() {
     return (
       <View style={styles.container}>
         <Text style={styles.header}>Transportation</Text>
 
+        <FlightItem
+          handleFlightSelect={this.handleFlightSelect}
+          flight={this.state.flights.iceland}
+        />
+
+        <FlightItem
+          handleFlightSelect={this.handleFlightSelect}
+          flight={this.state.flights.gmp}
+        />
         <TouchableHighlight
           onPress={this.onPressContinue}
           style={styles.continue}
@@ -45,14 +79,6 @@ class TransportationScreen extends Component {
         >
           <Text>Continue</Text>
         </TouchableHighlight>
-        <FlightItem
-          flight={{
-            name: "Iceland",
-            takeoff: "ORD",
-            destination: "ICN",
-            cost: "$250.00"
-          }}
-        />
       </View>
     );
   }
