@@ -40,7 +40,10 @@ class TransportationScreen extends Component {
     Navigation.push(this.props.componentId, {
       component: {
         name: "Wander.Confirm",
-        passProps: {},
+        passProps: {
+          flight: this.state.flights.gmp,
+          deal: this.props.deal
+        },
         options: {
           topBar: {
             visible: true,

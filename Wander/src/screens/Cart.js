@@ -32,7 +32,9 @@ class CartScreen extends Component {
     Navigation.push(this.props.componentId, {
       component: {
         name: "Wander.Transportation",
-        passProps: {},
+        passProps: {
+          deal: this.state.deal
+        },
         options: {
           topBar: {
             visible: true,

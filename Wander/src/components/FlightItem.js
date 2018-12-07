@@ -21,7 +21,9 @@ export default class FlightItem extends Component {
   render() {
     return (
       <TouchableWithoutFeedback
-        onPress={() => this.setState({ flightSelected: true })}
+        onPress={() =>
+          this.setState({ flightSelected: !this.state.flightSelected })
+        }
       >
         <View style={styles.container}>
           <View
