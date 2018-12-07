@@ -22,7 +22,7 @@ class ConfirmScreen extends Component {
 
   render() {
     let total =
-      parseInt(this.props.deal.price) + parseInt(this.props.flight.cost);
+      parseInt(this.props.deal.price) + parseInt(this.props.flight1.cost);
     total = total.toString();
     return (
       <View style={styles.container}>
@@ -37,11 +37,11 @@ class ConfirmScreen extends Component {
           price={this.props.deal.price}
           key={this.props.deal.title}
         />
-        <Text style={styles.subHeader}>Flight</Text>
-        <FlightItem flight={this.props.flight} />
-
+        <Text style={styles.subHeader}>Flights</Text>
+        <FlightItem flight={this.props.flight1} />
+        <FlightItem flight={this.props.flight2} />
         <View>
-          <Text style={styles.total}>Total: $2338</Text>
+          <Text style={styles.total}>Total: $2748</Text>
         </View>
         <TouchableHighlight
           onPress={this.onCheckout}
@@ -66,14 +66,14 @@ const styles = StyleSheet.create({
     padding: 10
   },
   subHeader: {
-    fontSize: 24,
+    fontSize: 18,
     color: "#d1d1d1",
-    marginHorizontal: 24,
+    marginHorizontal: 10,
     marginTop: 16
   },
   total: {
     marginHorizontal: 24,
-    fontSize: 24,
+    fontSize: 18,
     fontWeight: "500",
     marginTop: 16
   },

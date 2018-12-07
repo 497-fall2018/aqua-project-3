@@ -18,7 +18,7 @@ class TransportationScreen extends Component {
         iceland: {
           name: "Iceland",
           takeoff: "ORD",
-          destination: "ICN",
+          destination: "GMP",
           cost: "$569.00",
           date: "12/15/18",
           time: "10:45 AM"
@@ -28,6 +28,14 @@ class TransportationScreen extends Component {
           takeoff: "MDW",
           destination: "GMP",
           cost: "$450.00",
+          date: "12/16/18",
+          time: "4:40 AM"
+        },
+        gmp2: {
+          name: "MDW",
+          takeoff: "GMP",
+          destination: "MDW",
+          cost: "$410.00",
           date: "12/16/18",
           time: "4:40 AM"
         }
@@ -41,7 +49,8 @@ class TransportationScreen extends Component {
       component: {
         name: "Wander.Confirm",
         passProps: {
-          flight: this.state.flights.gmp,
+          flight1: this.state.flights.gmp,
+          flight2: this.state.flights.gmp2,
           deal: this.props.deal
         },
         options: {
@@ -64,7 +73,7 @@ class TransportationScreen extends Component {
   render() {
     return (
       <View style={styles.container}>
-        <Text style={styles.header}>Transportation</Text>
+        <Text style={styles.header}>Chicago to South Korea</Text>
 
         <FlightItem
           handleFlightSelect={this.handleFlightSelect}
@@ -74,6 +83,12 @@ class TransportationScreen extends Component {
         <FlightItem
           handleFlightSelect={this.handleFlightSelect}
           flight={this.state.flights.gmp}
+        />
+
+        <Text style={styles.header}>South Korea to Chicago</Text>
+        <FlightItem
+          handleFlightSelect={this.handleFlightSelect}
+          flight={this.state.flights.gmp2}
         />
         <TouchableHighlight
           onPress={this.onPressContinue}
@@ -95,7 +110,9 @@ const styles = StyleSheet.create({
   },
   header: {
     fontWeight: "bold",
-    padding: 10
+    paddingHorizontal: 10,
+    paddingTop: 20,
+    
   },
   continue: {
     marginLeft: 120,
